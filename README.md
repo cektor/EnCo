@@ -74,9 +74,11 @@ Download and Install according to your Operating System from the link.
 https://github.com/cektor/EnCo/releases/tag/1.00
 
 
-# Linux and Windows Screenshot
+# Linux Screenshot
+![Linux(pardus)](enco-linux.png)  
 
-GNU Linux Pardus: ![Linux(pardus)](enco-linux.png)  Windows 11: ![Windows(11)](enco-windows.png) 
+# Windows Screenshot
+![Windows(11)](enco-windows.png) 
 
 
 
