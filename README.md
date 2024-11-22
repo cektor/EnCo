@@ -4,12 +4,21 @@ EnCo is a file encryption application developed with Python. This application al
 Install Git Clone and Python3
 
 Github Package Must Be Installed On Your Device.
+
+git
 ```bash
 sudo apt install git -y
 ```
 
+Python3
 ```bash
 sudo apt install python3 -y 
+
+```
+
+pip
+```bash
+sudo apt install python3-pip
 
 ```
 
