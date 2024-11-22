@@ -1,5 +1,5 @@
 # EnCo
-EnCo is a file encryption application developed with Python. This application allows users to encrypt and decrypt their files. The encryption and decryption operations are performed with the AES encryption algorithm.
+EnCo is a file locking application developed with Python. This application allows users to lock and unlock their files. locking and unlocking operations are performed with the AES crypto algorithm.
 
 Install Git Clone and Python3
 
