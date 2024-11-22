@@ -101,7 +101,7 @@ Release Page: https://github.com/cektor/EnCo/releases/tag/1.00
 ![Linux(pardus)](enco_linux1.png)  
 
 # Windows Screenshot
-![Windows(11)](enco-windows.png) 
+![Windows(11)](enco_windows1.png) 
 
 
 
