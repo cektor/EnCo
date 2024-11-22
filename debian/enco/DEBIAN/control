@@ -1,0 +1,10 @@
+Package: enco
+Version: 1.0-1
+Architecture: all
+Maintainer: Fatih Önder <fatih@algyazilim.com>
+Installed-Size: 55
+Section: utils
+Priority: optional
+Homepage: https://www.algyazilim.com
+Description: EnCo - Encryption and Decryption Utility
+ This is a utility for encrypting and decrypting files.

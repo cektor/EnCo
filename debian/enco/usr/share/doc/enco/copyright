@@ -1,0 +1,8 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: enco
+Source: https://github.com/cektor/EnCo
+
+Files: *
+Copyright:Fatih ÖNDER (CekToR) 2024 ALG Yazılım Inc.
+License: GNU
+
