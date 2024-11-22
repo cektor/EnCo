@@ -76,7 +76,7 @@ https://github.com/cektor/EnCo/releases/tag/1.00
 
 # Linux and Windows Screenshot
 
-![Linux(pardus)](enco-linux.png)  ![Windows(11)](enco-windows.png) 
+GNU Linux Pardus: ![Linux(pardus)](enco-linux.png)  Windows 11: ![Windows(11)](enco-windows.png) 
 
 
 
