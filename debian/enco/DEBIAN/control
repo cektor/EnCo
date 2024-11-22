@@ -1,10 +1,11 @@
 Package: enco
 Version: 1.0-1
 Architecture: all
-Maintainer: Fatih Önder <fatih@algyazilim.com>
-Installed-Size: 55
-Section: utils
+Maintainer: Fatih ÖNDER <fatih@algyazilim.com>
+Installed-Size: 105
+Depends: python3:any, python3-pyqt6, python3-cryptography
+Section: python
 Priority: optional
-Homepage: https://www.algyazilim.com
-Description: EnCo - Encryption and Decryption Utility
- This is a utility for encrypting and decrypting files.
+Homepage: https://algyazilim.com
+Description: EnCo - Dosya Şifreleme ve Çözme Aracı
+ EnCo, dosyalarınızı güvenli bir şekilde şifreleyip çözmenize olanak tanıyan bir Python uygulamasıdır.

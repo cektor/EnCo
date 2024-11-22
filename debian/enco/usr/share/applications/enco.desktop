@@ -2,7 +2,7 @@
 Version=1.0
 Name=EnCo
 Comment=EnCo Application
-Exec=python3 /usr/local/bin/enco.py
+Exec=python3 /usr/bin/enco.py
 Icon=/usr/share/icons/hicolor/256x256/apps/encolo.png
 Terminal=false
 Type=Application
