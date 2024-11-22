@@ -68,10 +68,10 @@ MacOS VSCode Terminal
 pyinstaller --onefile --noconsole enco.py
 ```
 
-# To run directly on Windows or Linux
-Download and Run According to Your Operating System from the Link
+# To install directly on Windows or Linux
+Download and Install according to your Operating System from the link.
 
-https://github.com/cektor/MB-GB-TB-Converter/releases/tag/v1.0
+https://github.com/cektor/EnCo/releases/tag/1.00
 
 
 # Linux Screenshot
