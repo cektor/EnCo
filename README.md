@@ -76,7 +76,7 @@ Linux (based debian) Terminal:
  wget -O EnCo_Linux64.deb https://github.com/cektor/EnCo/releases/download/1.00/Setup_Linux64.deb && sudo apt install ./EnCo_Linux64.deb && sudo apt-get install -f
 ```
 
-Windows İnstaller CMD (PowerShell): 
+Windows Installer CMD (PowerShell): 
 ```bash
 powershell -Command "Invoke-WebRequest -Uri 'https://github.com/cektor/EnCo/releases/download/1.00/Setup_Win64.exe' -OutFile 'Setup_Win64.exe'" && start /wait Setup_Win64.exe
 ```
