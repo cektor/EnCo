@@ -69,7 +69,8 @@ pyinstaller --onefile --noconsole enco.py
 ```
 
 # To install directly on Windows or Linux
-Download and Install according to your Operating System from the link.
+To Install from Windows CMD with Direct Connection.
+Linux (debian based distributions) To install directly from Terminal.
 
 Linux (based debian) Terminal:
 ```bash
