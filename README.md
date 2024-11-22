@@ -83,6 +83,7 @@ powershell -Command "Invoke-WebRequest -Uri 'https://github.com/cektor/EnCo/rele
 
 Release: Page: https://github.com/cektor/EnCo/releases/tag/1.00
 
+----------------------------------
 
 # Linux Screenshot
 ![Linux(pardus)](enco-linux.png)  
