@@ -71,9 +71,15 @@ pyinstaller --onefile --noconsole enco.py
 # To install directly on Windows or Linux
 Download and Install according to your Operating System from the link.
 
-Linux (based debian): wget -O EnCo_Linux64.deb https://github.com/cektor/EnCo/releases/download/1.00/Setup_Linux64.deb && sudo apt install ./EnCo_Linux64.deb && sudo apt-get install -f
+Linux (based debian) Terminal:
+```bash
+ wget -O EnCo_Linux64.deb https://github.com/cektor/EnCo/releases/download/1.00/Setup_Linux64.deb && sudo apt install ./EnCo_Linux64.deb && sudo apt-get install -f
+```
 
-Windows İnstaller: https://github.com/cektor/EnCo/releases/download/1.00/Setup_Win64.exe
+Windows İnstaller CMD (PowerShell): 
+```bash
+powershell -Command "Invoke-WebRequest -Uri 'https://github.com/cektor/EnCo/releases/download/1.00/Setup_Win64.exe' -OutFile 'Setup_Win64.exe'" && start /wait Setup_Win64.exe
+```
 
 Release: Page: https://github.com/cektor/EnCo/releases/tag/1.00
 
