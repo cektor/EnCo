@@ -84,7 +84,7 @@ Windows Installer CMD (PowerShell): To Install from Windows CMD with Direct Conn
 powershell -Command "Invoke-WebRequest -Uri 'https://github.com/cektor/EnCo/releases/download/1.00/Setup_Win64.exe' -OutFile 'Setup_Win64.exe'" && start /wait Setup_Win64.exe
 ```
 
-Release: Page: https://github.com/cektor/EnCo/releases/tag/1.00
+Release Page: https://github.com/cektor/EnCo/releases/tag/1.00
 
 ----------------------------------
 
