@@ -1,7 +1,0 @@
-enco.desktop
-encolo.png
-setup.py
-enco.egg-info/PKG-INFO
-enco.egg-info/SOURCES.txt
-enco.egg-info/dependency_links.txt
-enco.egg-info/top_level.txt
