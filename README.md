@@ -24,9 +24,9 @@ sudo apt install python3-pip
 
 # Required Libraries
 
-PyQt6
+PyQt5
 ```bash
-pip install PyQt6
+pip install PyQt5
 ```
 cryptography
 ```bash
