@@ -1,0 +1,4 @@
+#!/bin/bash
+enco.py usr/bin/
+enco.desktop usr/share/applications/
+debian/encolo.png /usr/share/icons/hicolor/48x48/apps/

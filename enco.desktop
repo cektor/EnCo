@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Name=EnCo
+Comment=EnCo Application
+Exec=python3 /usr/bin/enco.py
+Icon=/usr/share/icons/hicolor/48x48/apps/encolo.png
+Terminal=false
+Type=Application
+Categories=Utility
+
+Name[tr_TR]=EnCo
