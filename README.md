@@ -98,10 +98,10 @@ Release Page: https://github.com/cektor/EnCo/releases/tag/1.00
 ----------------------------------
 
 # Linux Screenshot
-![Linux(pardus)](enco_linux1.png)  
+![Linux(pardus)](screnshoot/enco_linux1.png)  
 
 # Windows Screenshot
-![Windows(11)](enco_windows1.png) 
+![Windows(11)](screnshoot/enco_windows1.png) 
 
 
 
