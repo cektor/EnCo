@@ -238,6 +238,8 @@ class FileEncryptionApp(QMainWindow):
             " Fatih ÖNDER (CekToR) | wwww.fatihonder.org.tr | fatih@algyazilim.com\n\n"
             " EnCo Tüm Hakları Saklıdır. 2024 ALG Software Inc\n\n"
             " ALG Yazılım Pardus'a Göç'ü Destekler."
+            " ALG Yazılım Pardus'a Göç'ü Destekler.\n\n"
+            " EnCo Sürüm: 1.0\n\n"
         )
         dialog = QDialog(self)
         dialog.setWindowTitle("Hakkında")
