@@ -1,6 +1,13 @@
 # EnCo
 EnCo is a file Encryption application developed with Python. This application allows users to Encrypt and Decrypt their files. Encrypt and Decrypt operations are performed with the AES crypto algorithm.
 
+# Linux Screenshot
+![Linux(pardus)](ScreenShot/enco_linux.png)  
+
+# Windows Screenshot
+![Windows(11)](ScreenShot/enco_windows.png) 
+
+--------------------
 Install Git Clone and Python3
 
 Github Package Must Be Installed On Your Device.
@@ -96,12 +103,3 @@ powershell -Command "Invoke-WebRequest -Uri 'https://github.com/cektor/EnCo/rele
 Release Page: https://github.com/cektor/EnCo/releases/tag/1.00
 
 ----------------------------------
-
-# Linux Screenshot
-![Linux(pardus)](ScreenShot/enco_linux.png)  
-
-# Windows Screenshot
-![Windows(11)](ScreenShot/enco_windows.png) 
-
-
-
