@@ -1,6 +1,10 @@
 # EnCo
 EnCo is a file Encryption application developed with Python. This application allows users to Encrypt and Decrypt their files. Encrypt and Decrypt operations are performed with the AES crypto algorithm.
 
+# EnCo Logo
+![enco_logo](encolo.png)  
+----------------------
+
 # Linux Screenshot
 ![Linux(pardus)](ScreenShot/enco_linux.png)  
 
