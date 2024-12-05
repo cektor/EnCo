@@ -1,3 +1,7 @@
+<a href="https://github.com/pedromxavier/flag-badges">
+    <img src="https://raw.githubusercontent.com/pedromxavier/flag-badges/main/badges/TR.svg" alt="made in TR">
+</a>
+
 # EnCo
 EnCo is a Cross-Platform file Encryption application developed in Python. This application allows users to Encrypt and Decrypt their files. Encrypt and Decrypt operations are performed with the AES crypto algorithm.
 
