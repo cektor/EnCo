@@ -1,4 +1,4 @@
-<a href="https://github.com/pedromxavier/flag-badges">
+<a href="#">
     <img src="https://raw.githubusercontent.com/pedromxavier/flag-badges/main/badges/TR.svg" alt="made in TR">
 </a>
 
