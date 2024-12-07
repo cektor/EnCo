@@ -14,7 +14,7 @@ EnCo is a Cross-Platform file Encryption application developed in Python. This a
 ----------------------
 
 # Linux Screenshot
-![Linux(pardus)](ScreenShot/enco_linux.png)  
+![Linux(pardus)](ScreenShot/enco_linux.gif)  
 
 # Windows Screenshot
 ![Windows(11)](ScreenShot/enco_windows.png) 
