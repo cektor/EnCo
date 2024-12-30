@@ -53,8 +53,23 @@ class FileEncryptionApp(QMainWindow):
         # Dil ayarını yükle
         self.current_language = self.settings.value("language", "Turkish")
         
+        # Dil değişkenlerini başlat
+        self.initialize_language_variables()
+        
         self.initUI()
         self.update_language()
+
+    def initialize_language_variables(self):
+        # Varsayılan olarak Türkçe değerleri ayarla
+        self.file_select_error = "Lütfen bir dosya seçin!"
+        self.password_length_error = "Parola uzunluğu 4-64 karakter arasında olmalıdır!"
+        self.encrypted_file_error = "Lütfen şifrelenmiş bir .enco dosyası seçin!"
+        self.encryption_success = "Şifreleme tamamlandı: "
+        self.decryption_success = "Çözme tamamlandı: "
+        self.error_prefix = "Hata: "
+        self.selected_file_text = "Seçilen Dosya: "
+        self.about_menu_text = "Hakkında"
+        self.language_label_text = "Dil:"
 
     def initUI(self):
         self.setWindowTitle("EnCo Dosya Şifrele/Çöz")
@@ -75,27 +90,20 @@ class FileEncryptionApp(QMainWindow):
         self.language_combo.setCurrentText(self.current_language)
         self.language_combo.currentTextChanged.connect(self.change_language)
         
-        
-
-        
-        language_label = QLabel("Dil / Language:")
+        language_label = QLabel(self.language_label_text)
         language_label.setStyleSheet("color: #FFD24C;")
-
-        
         
         language_layout.addWidget(language_label)
         language_layout.addWidget(self.language_combo)
         layout.addLayout(language_layout)
         
-        
-        
-
         # Logo kısmı
         self.logo_label = QLabel(self)
         pixmap = QPixmap(logo_path)
-        self.logo_label.setPixmap(pixmap)
+        scaled_pixmap = pixmap.scaled(80, 80, Qt.KeepAspectRatio, Qt.SmoothTransformation)
+        self.logo_label.setPixmap(scaled_pixmap)
         self.logo_label.setAlignment(Qt.AlignCenter)
-        self.logo_label.setFixedHeight(100)
+        self.logo_label.setFixedHeight(80)
 
         
 
@@ -183,6 +191,20 @@ class FileEncryptionApp(QMainWindow):
             self.decrypt_button.setText("🔑 Decrypt File")
             self.drop_label.setText("Drag and Drop File")
             self.click_to_select_label.setText("Click to Select File")
+            
+            # Hata mesajları
+            self.file_select_error = "Please select a file!"
+            self.password_length_error = "Password length must be 4-64 characters!"
+            self.encrypted_file_error = "Please select an encrypted .enco file!"
+            self.encryption_success = "Encryption completed: "
+            self.decryption_success = "Decryption completed: "
+            self.error_prefix = "Error: "
+            self.selected_file_text = "Selected File: "
+            
+            # Menü öğeleri
+            self.about_menu_text = "About"
+            self.language_label_text = "Language:"
+            
         else:
             # Türkçe çeviriler
             self.setWindowTitle("EnCo Dosya Şifrele/Çöz")
@@ -190,10 +212,20 @@ class FileEncryptionApp(QMainWindow):
             self.encrypt_button.setText("🔒 Dosyayı Şifrele")
             self.decrypt_button.setText("🔑 Dosyayı Çöz")
             self.drop_label.setText("Dosya Sürükle-Bırak")
-            self.click_to_select_label.setText("Dosya Seçmek İçin Tıklayınız.")
-
-
-       
+            self.click_to_select_label.setText("Dosya Seçmek İçin Tıklayınız")
+            
+            # Hata mesajları
+            self.file_select_error = "Lütfen bir dosya seçin!"
+            self.password_length_error = "Parola uzunluğu 4-64 karakter arasında olmalıdır!"
+            self.encrypted_file_error = "Lütfen şifrelenmiş bir .enco dosyası seçin!"
+            self.encryption_success = "Şifreleme tamamlandı: "
+            self.decryption_success = "Çözme tamamlandı: "
+            self.error_prefix = "Hata: "
+            self.selected_file_text = "Seçilen Dosya: "
+            
+            # Menü öğeleri
+            self.about_menu_text = "Hakkında"
+            self.language_label_text = "Dil:"
 
     def create_button(self, text: str, action):
         button = QPushButton(text)
@@ -216,8 +248,7 @@ class FileEncryptionApp(QMainWindow):
         file_path, _ = file_dialog.getOpenFileName(self, dialog_title)
         if file_path:
             self.file_path = file_path
-            file_text = "Selected File:" if self.current_language == "English" else "Seçilen Dosya:"
-            self.label.setText(f"{file_text} {os.path.basename(file_path)}")
+            self.label.setText(f"{self.selected_file_text}{os.path.basename(file_path)}")
 
     def on_drop_frame_clicked(self, event):
         self.select_file()
@@ -241,8 +272,7 @@ class FileEncryptionApp(QMainWindow):
 
     def encrypt_file(self):
         if not self.file_path:
-            error_text = "Please select a file!" if self.current_language == "English" else "Lütfen bir dosya seçin!"
-            self.label.setText(error_text)
+            self.label.setText(self.file_select_error)
             return
 
         password = self.ask_password()
@@ -265,22 +295,15 @@ class FileEncryptionApp(QMainWindow):
             os.remove(self.file_path)
             self.file_path = encrypted_path
             
-            if self.current_language == "English":
-                self.label.setText(f"Encryption completed: {os.path.basename(encrypted_path)}")
-            else:
-                self.label.setText(f"Şifreleme tamamlandı: {os.path.basename(encrypted_path)}")
+            self.label.setText(f"{self.encryption_success}{os.path.basename(encrypted_path)}")
 
         except Exception as e:
-            error_text = f"Error: {str(e)}" if self.current_language == "English" else f"Hata: {str(e)}"
+            error_text = f"{self.error_prefix}{str(e)}"
             self.label.setText(error_text)
 
     def decrypt_file(self):
         if not self.file_path or not self.file_path.endswith(".enco"):
-            if self.current_language == "English":
-                error_text = "Please select an encrypted .enco file!"
-            else:
-                error_text = "Lütfen şifrelenmiş bir .enco dosyası seçin!"
-            self.label.setText(error_text)
+            self.label.setText(self.encrypted_file_error)
             return
 
         password = self.ask_password()
@@ -303,13 +326,10 @@ class FileEncryptionApp(QMainWindow):
             os.remove(self.file_path)
             self.file_path = original_path
             
-            if self.current_language == "English":
-                self.label.setText(f"Decryption completed: {os.path.basename(original_path)}")
-            else:
-                self.label.setText(f"Çözme tamamlandı: {os.path.basename(original_path)}")
+            self.label.setText(f"{self.decryption_success}{os.path.basename(original_path)}")
 
         except Exception as e:
-            error_text = f"Error: {str(e)}" if self.current_language == "English" else f"Hata: {str(e)}"
+            error_text = f"{self.error_prefix}{str(e)}"
             self.label.setText(error_text)
 
     def dragEnterEvent(self, event):
@@ -321,49 +341,87 @@ class FileEncryptionApp(QMainWindow):
         if urls:
             file_path = urls[0].toLocalFile()
             self.file_path = file_path
-            
-            if self.current_language == "English":
-                self.label.setText(f"Selected File: {os.path.basename(file_path)}")
-            else:
-                self.label.setText(f"Seçilen Dosya: {os.path.basename(file_path)}")
+            self.label.setText(f"{self.selected_file_text}{os.path.basename(file_path)}")
         
     def show_menu(self):
         menu = QMenu(self)
-        about_action = QAction("Hakkında" if self.current_language == "Turkish" else "About", self)
+        about_action = QAction(self.about_menu_text, self)
         about_action.triggered.connect(self.show_about)
         menu.addAction(about_action)
         menu.exec(self.menu_button.mapToGlobal(QPoint(0, 0)))
 
     def show_about(self):
-        if self.current_language == "English":
-            about_text = (
-                "\n\n"
-                " EnCo File Encryption Application\n\n"
-                " This application allows you to encrypt your files securely.\n\n"
-                " Developer: ALG Software Inc. | www.algyzilim.com | info@algyazilim.com\n\n"
-                " Fatih ÖNDER (CekToR) | www.fatihonder.org.tr | fatih@algyazilim.com\n\n"
-                " EnCo All Rights Reserved. 2024 ALG Software Inc\n\n"
-                " ALG Software Supports Migration to Pardus\n\n"
-                " EnCo Version: 1.0\n\n"
-            )
-            dialog_title = "About"
-        else:
-            about_text = (
-                "\n\n"
-                " EnCo Dosya Şifreleme Uygulaması\n\n"
-                " Bu uygulama, dosyalarınızı kriptolayarak güvenli hale getirmenize olanak tanır.\n\n"
-                " Geliştirici: ALG Yazılım Inc. | www.algyzilim.com | info@algyazilim.com\n\n"
-                " Fatih ÖNDER (CekToR) | wwww.fatihonder.org.tr | fatih@algyazilim.com\n\n"
-                " EnCo Tüm Hakları Saklıdır. 2024 ALG Software Inc\n\n"
-                " ALG Yazılım Pardus'a Göç'ü Destekler.\n\n"
-                " EnCo Sürüm: 1.0\n\n"
-           )
+        # Ortak stil tanımlamaları
         dialog = QDialog(self)
-        dialog.setWindowTitle("Hakkında")
-        dialog.resize(450, 250)
-        label = QLabel(about_text, dialog)
-        label.setWordWrap(True)
-        label.setAlignment(Qt.AlignCenter)
+        dialog.setFixedSize(500, 500)
+        dialog.setStyleSheet("""
+            QDialog {
+                background-color: #2D2F31;
+                color: #FFD24C;
+            }
+            QLabel {
+                color: #FFD24C;
+                font-size: 13px;
+                padding: 10px;
+            }
+        """)
+        
+        layout = QVBoxLayout(dialog)
+        
+        # Logo ekleme
+        logo_label = QLabel()
+        logo_pixmap = QPixmap(logo_path).scaled(100, 100, Qt.KeepAspectRatio, Qt.SmoothTransformation)
+        logo_label.setPixmap(logo_pixmap)
+        logo_label.setAlignment(Qt.AlignCenter)
+        layout.addWidget(logo_label)
+        
+        # Başlık
+        title_label = QLabel("EnCo " + ("File Encryption Application" if self.current_language == "English" else "Dosya Şifreleme Uygulaması"))
+        title_label.setStyleSheet("font-size: 16px; font-weight: bold; color: #FFD24C;")
+        title_label.setAlignment(Qt.AlignCenter)
+        layout.addWidget(title_label)
+        
+        # İçerik
+        if self.current_language == "English":
+            content_text = """
+            This application allows you to encrypt your files securely.
+            
+            Developer: ALG Software Inc.
+            Website: www.algyzilim.com
+            Email: info@algyazilim.com
+            
+            Developer: Fatih ÖNDER (CekToR)
+            Website: www.fatihonder.org.tr
+            Email: fatih@algyazilim.com
+            
+            EnCo Version: 1.0
+            © 2024 ALG Software Inc. GNU License.
+            ALG Software Supports Migration to Pardus
+            """
+            dialog.setWindowTitle("About EnCo")
+        else:
+            content_text = """
+            Bu uygulama, dosyalarınızı kriptolayarak güvenli hale getirmenize olanak tanır.
+            
+            Geliştirici: ALG Yazılım Inc.
+            Web Sitesi: www.algyzilim.com
+            E-posta: info@algyazilim.com
+            
+            Geliştirici: Fatih ÖNDER (CekToR)
+            Web Sitesi: www.fatihonder.org.tr
+            E-posta: fatih@algyazilim.com
+            
+            EnCo Sürüm: 1.0
+            © 2024 ALG Yazılım Inc. GNU Lisansı.
+            ALG Yazılım Pardus'a Göç'ü Destekler
+            """
+            dialog.setWindowTitle("EnCo Hakkında")
+        
+        content_label = QLabel(content_text.strip())
+        content_label.setAlignment(Qt.AlignCenter)
+        content_label.setWordWrap(True)
+        layout.addWidget(content_label)
+        
         dialog.exec()
 
 if __name__ == "__main__":

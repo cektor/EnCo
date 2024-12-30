@@ -1,13 +1,4 @@
 #!/usr/bin/make -f
 
 %:
-	dh $@ --with python3 --buildsystem=pybuild
-
-override_dh_install:
-	dh_install
-	install -d $(DESTDIR)/usr/bin
-	install -m 755 $(CURDIR)/enco.py $(DESTDIR)/usr/bin/enco.py
-	install -d $(DESTDIR)/usr/share/applications
-	install -m 755 $(CURDIR)/debian/enco.desktop $(DESTDIR)/usr/share/applications/enco.desktop
-	install -d $(DESTDIR)/usr/share/icons/hicolor/48x48/apps
-	install -m 755 $(CURDIR)/debian/encolo.png $(DESTDIR)/usr/share/icons/hicolor/48x48/apps/encolo.png
+	dh $@ --buildsystem=pybuild
